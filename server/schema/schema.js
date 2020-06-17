@@ -50,8 +50,8 @@ const DirectorType = new GraphQLObjectType({
         age: {type: GraphQLInt},
         movies: {
             type: new GraphQLList(MovieType),
-            resolve(parent, args) {
-                return directors.find(director => director.id == parent.id)
+            resolve(parent) {
+                return movies.filter(movie => movie.directorId == parent.id)
             }
         }
     }),
@@ -74,6 +74,18 @@ const Query = new GraphQLObjectType({
                 return directors.find(director => director.id == args.id)
             }
         },
+        movies: {
+            type: new GraphQLList(MovieType),
+            resolve() {
+                return movies
+            }
+        },
+        directors: {
+            type: new GraphQLList(DirectorType),
+            resolve() {
+                return directors
+            }
+        }
     }
 });
 
