@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3005;
 
 mongoose.connect('mongodb+srv://dmytro_didukh:123321@cluster0-bluhz.azure.mongodb.net/graphQL?retryWrites=true&w=majority',
-    {useMongoClient: true}
+    {useUnifiedTopology: true}
 );
 
 app.use('/graphql', graphqlHTTP({
