@@ -5,7 +5,7 @@ const {
     GraphQLString,
     GraphQLSchema,
     GraphQLID,
-    GraphQLInt, 
+    GraphQLInt,
     GraphQLList
 } = graphql;
 
