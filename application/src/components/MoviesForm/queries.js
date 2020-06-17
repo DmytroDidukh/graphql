@@ -4,12 +4,7 @@ export const directorsQuery = gql`
     query directorsQuery {
         directors {
             id
-            name
-            age           
-            movies {
-                id
-                name               
-            }  
+            name      
         } 
     }
 `;
